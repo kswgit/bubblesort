@@ -20,9 +20,7 @@ quick([]) ->
   [];
 
 quick([Pivot | T]) ->
-  io:fwrite("pivot: ~p T: ~p ~n", [Pivot, T]),
   {L, R} = lists:partition(fun(X) -> X < Pivot end, T),
-  io:fwrite("~p ~p ~n", [L, R]),
   quick(L) ++ [Pivot] ++ quick(R).
 
 
